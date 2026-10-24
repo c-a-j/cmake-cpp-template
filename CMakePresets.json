@@ -1,0 +1,70 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "BUILD_TESTING": false
+      }
+    },
+    {
+      "name": "tidy",
+      "hidden": true,
+      "displayName": "Debug build with clang-tidy",
+      "cacheVariables": {
+        "CPP_STARTER_ENABLE_CLANG_TIDY": true
+      }
+    },
+    {
+      "name": "sanitize",
+      "hidden": true,
+      "displayName": "Debug build with ASan and UBSan (GCC/Clang)",
+      "cacheVariables": {
+        "CPP_STARTER_ENABLE_SANITIZERS": true
+      }
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug build",
+      "inherits": ["base", "tidy", "sanitize"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release build",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "debug", "configurePreset": "debug" },
+    { "name": "release", "configurePreset": "release" }
+  ],
+  "testPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug",
+      "output": { "outputOnFailure": true },
+      "execution": { "noTestsAction": "error" }
+    },
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "output": { "outputOnFailure": true },
+      "execution": { "noTestsAction": "error" }
+    }
+  ]
+}

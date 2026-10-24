@@ -1,0 +1,14 @@
+# Prioritize correctness and performance over blanket style enforcement.
+Checks: >-
+  -*,
+  clang-analyzer-*,
+  bugprone-*,
+  -bugprone-easily-swappable-parameters,
+  performance-*,
+  modernize-use-nullptr,
+  modernize-use-override,
+  modernize-use-equals-default,
+  modernize-use-equals-delete,
+  modernize-avoid-c-arrays
+WarningsAsErrors: ''
+InheritParentConfig: false

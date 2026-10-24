@@ -1,0 +1,10 @@
+AllowShortFunctionsOnASingleLine: None
+BasedOnStyle: LLVM
+BreakBeforeBraces: Attach
+ConstructorInitializerIndentWidth: 2
+ContinuationIndentWidth: 2
+FixNamespaceComments: false
+IndentWidth: 2
+NamespaceIndentation: None
+TabWidth: 2
+UseTab: Never
