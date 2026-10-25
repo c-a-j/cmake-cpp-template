@@ -1,10 +1,10 @@
 AllowShortFunctionsOnASingleLine: None
 BasedOnStyle: LLVM
 BreakBeforeBraces: Attach
-ConstructorInitializerIndentWidth: 2
-ContinuationIndentWidth: 2
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
 FixNamespaceComments: false
-IndentWidth: 2
+IndentWidth: 4
 NamespaceIndentation: None
-TabWidth: 2
+TabWidth: 4
 UseTab: Never

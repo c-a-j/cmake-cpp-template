@@ -6,12 +6,12 @@
 #include "lib.hpp"
 
 TEST(Greeting, NamedGreeting) {
-  std::ostringstream captured;
-  auto *original = std::cout.rdbuf(captured.rdbuf());
+    std::ostringstream captured;
+    auto *original = std::cout.rdbuf(captured.rdbuf());
 
-  lib::hello("foo");
+    lib::hello("foo");
 
-  std::cout.rdbuf(original);
+    std::cout.rdbuf(original);
 
-  EXPECT_EQ(captured.str(), "Hello, foo!\n");
+    EXPECT_EQ(captured.str(), "Hello, foo!\n");
 }
