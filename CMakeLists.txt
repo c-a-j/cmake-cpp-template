@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.25)
 
 project(cpp_starter VERSION 0.1.0 LANGUAGES CXX)
 
-option(CPP_STARTER_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
-option(CPP_STARTER_ENABLE_SANITIZERS "Enable AddressSanitizer and UndefinedBehaviorSanitizer" OFF)
-option(CPP_STARTER_ENABLE_CLANG_TIDY "Run clang-tidy during compilation" OFF)
+option(PROJECT_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
+option(PROJECT_ENABLE_SANITIZERS "Enable AddressSanitizer and UndefinedBehaviorSanitizer" OFF)
+option(PROJECT_ENABLE_CLANG_TIDY "Run clang-tidy during compilation" OFF)
 
 include(cmake/CompilerOptions.cmake)
 

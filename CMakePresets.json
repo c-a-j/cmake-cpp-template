@@ -21,7 +21,7 @@
       "hidden": true,
       "displayName": "Debug build with clang-tidy",
       "cacheVariables": {
-        "CPP_STARTER_ENABLE_CLANG_TIDY": true
+        "PROJECT_ENABLE_CLANG_TIDY": true
       }
     },
     {
@@ -29,7 +29,7 @@
       "hidden": true,
       "displayName": "Debug build with ASan and UBSan (GCC/Clang)",
       "cacheVariables": {
-        "CPP_STARTER_ENABLE_SANITIZERS": true
+        "PROJECT_ENABLE_SANITIZERS": true
       }
     },
     {

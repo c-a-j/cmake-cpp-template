@@ -22,7 +22,7 @@ support MSVC or clang-cl.
    **Use this template** for each new project.
 2. Change `cpp_starter` and the version in the root `CMakeLists.txt`. The project
    name is also the executable name; use a simple name without spaces.
-3. Rename the `CPP_STARTER_` option prefix in `CMakeLists.txt`,
+3. Rename the `PROJECT_` option prefix in `CMakeLists.txt`,
    `cmake/CompilerOptions.cmake`, and `CMakePresets.json` if desired. You can also
    rename `cpp_starter_apply_compiler_options` in the module and its root call.
    Update the example commands below to match.
@@ -75,13 +75,13 @@ ctest --preset tidy
 
 Configuration fails if clang-tidy cannot be found. To select a versioned or
 nonstandard executable, configure with
-`-DCPP_STARTER_CLANG_TIDY=/path/to/clang-tidy`.
+`-DPROJECT_CLANG_TIDY=/path/to/clang-tidy`.
 
 `.clang-tidy` enables the Clang static analyzer, bug-prone and performance checks,
 and selected modernization checks. It avoids blanket style enforcement and does
 not apply automatic fixes. Analysis warnings are not errors by default; adjust
 `WarningsAsErrors` in `.clang-tidy` if you want a strict analysis gate. The
-`CPP_STARTER_WARNINGS_AS_ERRORS` option controls compiler warnings separately.
+`PROJECT_WARNINGS_AS_ERRORS` option controls compiler warnings separately.
 
 Analysis runs only for source files being compiled, so an unchanged build does
 not rerun it. Force a complete pass after changing `.clang-tidy` with:
@@ -126,7 +126,7 @@ creating each additional library or test target that needs those settings.
 Treat warnings as errors when wanted:
 
 ```sh
-cmake --preset dev -DCPP_STARTER_WARNINGS_AS_ERRORS=ON
+cmake --preset dev -DPROJECT_WARNINGS_AS_ERRORS=ON
 ```
 
 Cache options persist in that build directory. Pass `OFF` to disable the option
